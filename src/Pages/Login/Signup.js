@@ -17,18 +17,27 @@ const Signup = () => {
     handleGoogleSignin,
     setIsLoading,
     error,
+    setError,
     handleEmailChanging,
     handleRegistration,
     handlePasswordChanging,
+    handleUpdateName,
   } = useFirebase();
   // const location = useLocation();
   // const history = useHistory();
   // const redirect_url = location.state?.from || "/home";
 
   const googleSignin = () => {
-    handleGoogleSignin().then(() => {
-      // history.push(redirect_url);
-    });
+    handleGoogleSignin()
+      .then(() => {
+        // history.push(redirect_url);
+      })
+      .catch((error) => {
+        setError(error.message);
+        if (error.message === "Firebase: Error (auth/wrong-password).") {
+          setError("Incorrect Password!");
+        }
+      });
     // .finally(() => setIsLoading(false));
   };
 
@@ -40,6 +49,7 @@ const Signup = () => {
             <h3 className="py-3">Register</h3>
             <Form onSubmit={handleRegistration}>
               <FormControl
+                onBlur={handleUpdateName}
                 className="input-field mb-3"
                 placeholder="Name"
                 aria-label="name"
@@ -60,13 +70,7 @@ const Signup = () => {
                 type="password"
                 aria-describedby="basic-addon2"
               />
-              <FormControl
-                className="input-field mb-3"
-                placeholder="Confirm Password"
-                type="password"
-                aria-label="password"
-                aria-describedby="basic-addon2"
-              />
+
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Text className="text-danger">{error}</Form.Text>
               </Form.Group>

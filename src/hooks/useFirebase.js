@@ -6,6 +6,9 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializingAuthentication from "../firebase/firebase.init";
@@ -17,6 +20,7 @@ const useFirebase = () => {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const auth = getAuth();
   const handleGoogleSignin = () => {
@@ -54,12 +58,26 @@ const useFirebase = () => {
       .then((result) => {
         setError("");
         setUser(result.user);
+        verifyEmail();
+        // updateName();
       })
       .catch((error) => {
         setError(error.message);
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           setError("This email is already been used!");
         }
+      });
+  };
+  const verifyEmail = () => {
+    sendEmailVerification(auth.currentUser).then((result) => {});
+  };
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log("reset done", email);
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   };
   const handleLogin = (e) => {
@@ -77,7 +95,20 @@ const useFirebase = () => {
         }
       });
   };
+  //   const updateName = () => {
+  //     updateProfile(auth.currentUser, { displayName: name })
+  //       .then((result) => {
+  //         console.log(result);
+  //       })
+  //       .catch((error) => {
+  //         setError(error.message);
+  //       });
+  //   };
 
+  const handleUpdateName = (e) => {
+    setName(e.target.value);
+    console.log(name);
+  };
   const handleEmailChanging = (e) => {
     setEmail(e.target.value);
   };
@@ -95,6 +126,8 @@ const useFirebase = () => {
     handleEmailChanging,
     handlePasswordChanging,
     handleRegistration,
+    handlePasswordReset,
+    handleUpdateName,
   };
 };
 

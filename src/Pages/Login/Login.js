@@ -18,6 +18,7 @@ const Login = () => {
     handleEmailChanging,
     handleLogin,
     handlePasswordChanging,
+    handlePasswordReset,
   } = useFirebase();
   // const location = useLocation();
   // const history = useHistory();
@@ -48,6 +49,7 @@ const Login = () => {
                 required
               />
               <FormControl
+                type="password"
                 onBlur={handlePasswordChanging}
                 className="input-field mb-3"
                 placeholder="Password"
@@ -65,7 +67,12 @@ const Login = () => {
               </div>
 
               <div className="py-2">
-                Create a new account?{" "}
+                <small onClick={handlePasswordReset}>
+                  <Button variant="link">Reset Password?</Button>
+                </small>
+              </div>
+              <div className="py-2">
+                Create a new account?
                 <Link className="" to="/signup">
                   <u>
                     <em>Sign Up</em>
