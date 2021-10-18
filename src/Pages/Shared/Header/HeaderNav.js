@@ -4,8 +4,10 @@ import logo from "../../../img/logo1.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HeaderTop from "./HeaderTop";
+import useFirebase from "../../../hooks/useFirebase";
 
 const HeaderNav = () => {
+  const { user, logOut } = useFirebase();
   return (
     <div>
       <HeaderTop></HeaderTop>
@@ -41,11 +43,44 @@ const HeaderNav = () => {
                 Shop
               </Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link>Name</Nav.Link>
-              <Nav.Link as={Link} to="/login">
-                Login
+            {user.email && (
+              <Nav.Link>
+                <img
+                  style={{
+                    height: "50px",
+                    width: "50px",
+                    borderRadius: "50%",
+                  }}
+                  src={user.photoURL}
+                  alt="user"
+                />
               </Nav.Link>
+            )}
+            <Nav>
+              {/* {user.email && (
+                <Nav.Link>
+                  <img
+                    style={{
+                      height: "50px",
+                      width: "50px",
+                      borderRadius: "50%",
+                    }}
+                    src={user.photoURL}
+                    alt="user"
+                  />
+                </Nav.Link>
+              )} */}
+              {user.email && <Nav.Link>{user.displayName}</Nav.Link>}
+
+              {/* Logout */}
+
+              {user.email ? (
+                <Nav.Link onClick={logOut}>Logout</Nav.Link>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

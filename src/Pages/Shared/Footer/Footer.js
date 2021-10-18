@@ -14,11 +14,7 @@ const Footer = () => {
         <Row className="gy-5">
           <Col md={3}>
             <div>
-              <img
-                style={{ maxHeight: "50px" }}
-                src={logoFooter}
-                alt="logo"
-              ></img>
+              <img style={{ width: "90%" }} src={logoFooter} alt="logo"></img>
               <p className="py-4">
                 After contacting us our medical personnel will assess your
                 medical needs and assist with options that accommodate your
@@ -157,7 +153,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/home">
-                  <i class="fab fa-linkedin-in px-3"></i>
+                  <i className="fab fa-linkedin-in px-3"></i>
                 </Link>
               </li>
             </Col>
