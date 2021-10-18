@@ -43,7 +43,7 @@ const HeaderNav = () => {
                 Shop
               </Nav.Link>
             </Nav>
-            {user.email && (
+            {user.photoURL && (
               <Nav.Link>
                 <img
                   style={{
@@ -57,7 +57,7 @@ const HeaderNav = () => {
               </Nav.Link>
             )}
             <Nav>
-              {user.email && <Nav.Link>{user.displayName}</Nav.Link>}
+              {user.displayName && <Nav.Link>{user.displayName}</Nav.Link>}
 
               {/* Logout */}
 

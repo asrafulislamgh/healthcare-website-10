@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -11,7 +11,14 @@ import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
 const Login = () => {
-  const { handleGoogleSignin, setIsLoading, error } = useFirebase();
+  const {
+    handleGoogleSignin,
+    setIsLoading,
+    error,
+    handleEmailChanging,
+    handleLogin,
+    handlePasswordChanging,
+  } = useFirebase();
   // const location = useLocation();
   // const history = useHistory();
   // const redirect_url = location.state?.from || "/home";
@@ -21,16 +28,6 @@ const Login = () => {
       // history.push(redirect_url);
     });
     // .finally(() => setIsLoading(false));
-  };
-  const handleLogin = (e) => {
-    console.log("login");
-    e.preventDefault();
-  };
-  const handleEmailChanging = (e) => {
-    console.log(e.target.value);
-  };
-  const handlePasswordChanging = (e) => {
-    console.log(e.target.value);
   };
 
   return (
@@ -48,6 +45,7 @@ const Login = () => {
                 placeholder="Email"
                 aria-label="email"
                 aria-describedby="basic-addon2"
+                required
               />
               <FormControl
                 onBlur={handlePasswordChanging}
