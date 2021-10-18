@@ -1,0 +1,7 @@
+nav {
+  font-weight: bold;
+}
+.nav-item {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
