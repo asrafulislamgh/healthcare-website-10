@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Login/Signup";
 import NotFoundPage from "./Pages/NotFound/NotFoundPage";
 import Footer from "./Pages/Shared/Footer/Footer";
 import HeaderNav from "./Pages/Shared/Header/HeaderNav";
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/signup">
+            <Signup></Signup>
           </Route>
           <Route path="/login">
             <Login></Login>

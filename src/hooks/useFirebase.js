@@ -23,10 +23,13 @@ const useFirebase = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+      } else {
+        setUser({});
       }
     });
   }, [auth]);
 
+  //   Logout
   const logOut = () => {
     signOut(auth)
       .then(() => {
@@ -34,7 +37,8 @@ const useFirebase = () => {
       })
       .catch((error) => {
         setError(error.message);
-      });
+      })
+      .finally(() => {});
   };
   return {
     user,

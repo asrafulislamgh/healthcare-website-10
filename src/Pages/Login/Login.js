@@ -1,47 +1,92 @@
 import React from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  FormControl,
+  Row,
+  Button,
+  Form,
+} from "react-bootstrap";
+import { useHistory, useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
-
 const Login = () => {
-  const { user, error, handleGoogleSignin } = useFirebase();
-  const googleSignin = (e) => {
-    e.preventDefault();
-    handleGoogleSignin().then(() => {});
-    console.log(user);
-  };
-  return (
-    <div className="my-5">
-      <div className="container">
-        <Row className="d-flex justify-content-center py-5">
-          <Col style={{ maxWidth: "400px" }}>
-            <h3>Login</h3>
-            <Form className="my-3">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
+  const { handleGoogleSignin, setIsLoading, error } = useFirebase();
+  // const location = useLocation();
+  // const history = useHistory();
+  // const redirect_url = location.state?.from || "/home";
 
-              <Form.Group className="mb-1" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Text className="">Forgot your pasword?</Form.Text>
-              </Form.Group>
+  const googleSignin = () => {
+    handleGoogleSignin().then(() => {
+      // history.push(redirect_url);
+    });
+    // .finally(() => setIsLoading(false));
+  };
+  const handleLogin = (e) => {
+    console.log("login");
+    e.preventDefault();
+  };
+  const handleEmailChanging = (e) => {
+    console.log(e.target.value);
+  };
+  const handlePasswordChanging = (e) => {
+    console.log(e.target.value);
+  };
+
+  return (
+    <div>
+      <Container className="justify-content-center my-5">
+        <Row className="d-flex justify-content-center text-center">
+          <Col style={{ maxWidth: "400px" }}>
+            <h3 className="py-3">Login</h3>
+
+            <Form onSubmit={handleLogin}>
+              <FormControl
+                type="email"
+                onBlur={handleEmailChanging}
+                className="input-field mb-3"
+                placeholder="Email"
+                aria-label="email"
+                aria-describedby="basic-addon2"
+              />
+              <FormControl
+                onBlur={handlePasswordChanging}
+                className="input-field mb-3"
+                placeholder="Password"
+                aria-label="password"
+                aria-describedby="basic-addon2"
+              />
+
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Text className="text-danger">{error}</Form.Text>
               </Form.Group>
-              <Button className="mb-2" variant="dark" type="submit">
-                Login
-              </Button>
-              <Form.Group className="mb-2" controlId="formBasicCheckbox">
-                <Form.Text className="text-muted">Or</Form.Text>
-              </Form.Group>
-              <Button onClick={googleSignin} variant="primary" type="submit">
-                Login with Google
-              </Button>
+              <div className="d-grid">
+                <Button type="submit" className="btn btn-danger py-3">
+                  Login
+                </Button>
+              </div>
+
+              <div className="py-2">
+                Create a new account?{" "}
+                <Link className="" to="/signup">
+                  <u>
+                    <em>Sign Up</em>
+                  </u>
+                </Link>
+              </div>
+              <div className="py-2">Or</div>
+
+              <div className="d-flex justify-content-between  mb-5">
+                <Button onClick={googleSignin} className="btn btn-primary py-3">
+                  Google
+                </Button>
+                <Button className="btn btn-dark text-white py-3">Github</Button>
+                <Button className="btn btn-primary py-3">Facebook</Button>
+              </div>
             </Form>
           </Col>
         </Row>
-      </div>
+      </Container>
     </div>
   );
 };

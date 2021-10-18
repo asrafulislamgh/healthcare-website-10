@@ -57,19 +57,6 @@ const HeaderNav = () => {
               </Nav.Link>
             )}
             <Nav>
-              {/* {user.email && (
-                <Nav.Link>
-                  <img
-                    style={{
-                      height: "50px",
-                      width: "50px",
-                      borderRadius: "50%",
-                    }}
-                    src={user.photoURL}
-                    alt="user"
-                  />
-                </Nav.Link>
-              )} */}
               {user.email && <Nav.Link>{user.displayName}</Nav.Link>}
 
               {/* Logout */}
@@ -77,8 +64,8 @@ const HeaderNav = () => {
               {user.email ? (
                 <Nav.Link onClick={logOut}>Logout</Nav.Link>
               ) : (
-                <Nav.Link as={Link} to="/login">
-                  Login
+                <Nav.Link as={Link} to="/signup">
+                  Sign Up
                 </Nav.Link>
               )}
             </Nav>
