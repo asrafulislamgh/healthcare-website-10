@@ -2,7 +2,7 @@ import React from "react";
 import "./HeaderNav.css";
 import logo from "../../../img/logo1.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import HeaderTop from "./HeaderTop";
 import useFirebase from "../../../hooks/useFirebase";
 
@@ -30,17 +30,37 @@ const HeaderNav = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto header-nav ms-lg-5">
-              <Nav.Link className="nav-item" as={Link} to="/home">
+              <Nav.Link
+                className="nav-item"
+                as={NavLink}
+                activeStyle={{ color: "red" }}
+                to="/home"
+              >
                 Home
               </Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="/aboutus">
+              <Nav.Link
+                className="nav-item"
+                as={NavLink}
+                activeStyle={{ color: "red" }}
+                to="/aboutus"
+              >
                 About Us
               </Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="/services">
+              <Nav.Link
+                className="nav-item"
+                as={NavLink}
+                activeStyle={{ color: "red" }}
+                to="/services"
+              >
                 Services
               </Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="">
-                Shop
+              <Nav.Link
+                className="nav-item"
+                as={NavLink}
+                activeStyle={{ color: "red" }}
+                to="/doctors"
+              >
+                Doctors
               </Nav.Link>
             </Nav>
             {user.photoURL && (
