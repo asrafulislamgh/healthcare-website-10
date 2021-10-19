@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import Rating from "react-rating";
 
 const Doctor = ({ doctor }) => {
-  const { dept, name, doctorImg, rating } = doctor;
+  const { dept, name, doctorImg, rating, country } = doctor;
   return (
     <div>
       <Card className="text-center">
@@ -13,6 +13,7 @@ const Doctor = ({ doctor }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>{dept}</Card.Text>
+          <Card.Text>{country}</Card.Text>
           <Card.Text>
             <Rating
               className="rating"

@@ -33,7 +33,7 @@ const HeaderNav = () => {
               <Nav.Link
                 className="nav-item"
                 as={NavLink}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "#e00f28" }}
                 to="/home"
               >
                 Home
@@ -41,7 +41,7 @@ const HeaderNav = () => {
               <Nav.Link
                 className="nav-item"
                 as={NavLink}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "#e00f28" }}
                 to="/aboutus"
               >
                 About
@@ -49,7 +49,7 @@ const HeaderNav = () => {
               <Nav.Link
                 className="nav-item"
                 as={NavLink}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "#e00f28" }}
                 to="/services"
               >
                 Services
@@ -57,7 +57,7 @@ const HeaderNav = () => {
               <Nav.Link
                 className="nav-item"
                 as={NavLink}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "#e00f28" }}
                 to="/doctors"
               >
                 Doctors
@@ -65,7 +65,7 @@ const HeaderNav = () => {
               <Nav.Link
                 className="nav-item"
                 as={NavLink}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "#e00f28" }}
                 to="/contact"
               >
                 Contact

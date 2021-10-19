@@ -4,7 +4,7 @@ import "./HeaderTop.css";
 
 const HeaderTop = () => {
   return (
-    <div className="bg-primary">
+    <div className="top-header">
       <Container>
         <Row className="py-2">
           <Col lg={4}>

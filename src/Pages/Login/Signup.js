@@ -21,7 +21,7 @@ const Signup = () => {
     handleEmailChanging,
     handleRegistration,
     handlePasswordChanging,
-    handleUpdateName,
+    // handleUpdateName,
   } = useAuth();
   const location = useLocation();
   const history = useHistory();
@@ -48,13 +48,13 @@ const Signup = () => {
           <Col style={{ maxWidth: "400px" }}>
             <h3 className="py-3">Register</h3>
             <Form onSubmit={handleRegistration}>
-              <FormControl
+              {/* <FormControl
                 onBlur={handleUpdateName}
                 className="input-field mb-3"
                 placeholder="Name"
                 aria-label="name"
                 aria-describedby="basic-addon2"
-              />
+              /> */}
               <FormControl
                 className="input-field mb-3"
                 onBlur={handleEmailChanging}
