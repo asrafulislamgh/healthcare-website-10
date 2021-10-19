@@ -101,16 +101,16 @@ const Footer = () => {
                 <Link to="/home">Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/aboutus">About Us</Link>
               </li>
               <li>
                 <Link to="/services">Services</Link>
               </li>
               <li>
-                <Link to="/news">Latest News</Link>
+                <Link to="/doctors">Doctors</Link>
               </li>
               <li>
-                <Link to="/shop">Shop</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </div>
           </Col>

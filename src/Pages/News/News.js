@@ -13,7 +13,7 @@ const News = () => {
   return (
     <div>
       <Container className="text-center my-5">
-        <h1 className="my-5 pt-5">Latest News</h1>
+        <h1 className="my-5">Latest News</h1>
         <Row md={3} lg={4} sm={2} xs={1} className="gy-4">
           {news.map((nws) => (
             <Col key={nws.id}>
