@@ -14,6 +14,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import HeaderNav from "./Pages/Shared/Header/HeaderNav";
 import Products from "./Pages/Products/Products";
 import Doctors from "./Pages/Doctors/Doctors";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/doctors">
               <Doctors></Doctors>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <Route path="/products">
               <Products></Products>

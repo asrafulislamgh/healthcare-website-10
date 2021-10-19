@@ -44,7 +44,7 @@ const HeaderNav = () => {
                 activeStyle={{ color: "red" }}
                 to="/aboutus"
               >
-                About Us
+                About
               </Nav.Link>
               <Nav.Link
                 className="nav-item"
@@ -61,6 +61,14 @@ const HeaderNav = () => {
                 to="/doctors"
               >
                 Doctors
+              </Nav.Link>
+              <Nav.Link
+                className="nav-item"
+                as={NavLink}
+                activeStyle={{ color: "red" }}
+                to="/contact"
+              >
+                Contact
               </Nav.Link>
             </Nav>
             {user.photoURL && (
