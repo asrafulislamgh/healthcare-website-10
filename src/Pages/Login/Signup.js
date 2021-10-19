@@ -10,7 +10,6 @@ import {
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import useFirebase from "../../hooks/useFirebase";
 import "./Signup.css";
 
 const Signup = () => {
@@ -24,14 +23,15 @@ const Signup = () => {
     handlePasswordChanging,
     handleUpdateName,
   } = useAuth();
-  // const location = useLocation();
-  // const history = useHistory();
-  // const redirect_url = location.state?.from || "/home";
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_url = location.state?.from || "/home";
 
   const googleSignin = () => {
     handleGoogleSignin()
       .then(() => {
-        // history.push(redirect_url);
+        history.push(redirect_url);
+        setIsLoading(false);
       })
       .catch((error) => {
         setError(error.message);
@@ -39,7 +39,6 @@ const Signup = () => {
           setError("Incorrect Password!");
         }
       });
-    // .finally(() => setIsLoading(false));
   };
 
   return (

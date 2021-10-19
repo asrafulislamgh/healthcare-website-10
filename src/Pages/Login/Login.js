@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Col,
   Container,
@@ -20,15 +20,16 @@ const Login = () => {
     handlePasswordChanging,
     handlePasswordReset,
   } = useFirebase();
-  // const location = useLocation();
-  // const history = useHistory();
-  // const redirect_url = location.state?.from || "/home";
+
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_url = location.state?.from || "/home";
 
   const googleSignin = () => {
     handleGoogleSignin().then(() => {
-      // history.push(redirect_url);
+      history.push(redirect_url);
+      setIsLoading(false);
     });
-    // .finally(() => setIsLoading(false));
   };
 
   return (
