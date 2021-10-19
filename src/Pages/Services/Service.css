@@ -19,9 +19,20 @@
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
+.card-body {
+  background-color: white;
+}
 .card-title {
   font-size: 1.5rem;
 }
 .card-info {
   font-size: 0.9rem;
+}
+.common-btn2 {
+  background-color: #e10f28;
+  color: white;
+}
+.common-btn2:hover {
+  background-color: white;
+  color: #e10f28;
 }

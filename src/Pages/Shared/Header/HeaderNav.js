@@ -33,7 +33,7 @@ const HeaderNav = () => {
               <Nav.Link className="nav-item" as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link className="nav-item" as={Link} to="">
+              <Nav.Link className="nav-item" as={Link} to="/aboutus">
                 About Us
               </Nav.Link>
               <Nav.Link className="nav-item" as={Link} to="/services">
