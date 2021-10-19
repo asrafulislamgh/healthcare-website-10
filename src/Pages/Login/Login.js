@@ -82,12 +82,12 @@ const Login = () => {
               </div>
               <div className="py-2">Or</div>
 
-              <div className="d-flex justify-content-between  mb-5">
+              <div className="d-grid">
                 <Button onClick={googleSignin} className="btn btn-primary py-3">
-                  Google
+                  With Google
                 </Button>
-                <Button className="btn btn-dark text-white py-3">Github</Button>
-                <Button className="btn btn-primary py-3">Facebook</Button>
+                {/* <Button className="btn btn-dark text-white py-3">Github</Button>
+                <Button className="btn btn-primary py-3">Facebook</Button> */}
               </div>
             </Form>
           </Col>

@@ -1,0 +1,30 @@
+[
+    {
+        "id" : 1,
+        "name" : "Examination for our kids",
+        "date" : "12th Dec, 2021",
+        "info" : "We have an impressive clinical and basic research program. Many of our clinical anesthesiologists, as well as a large contingent of basic scientists, which is the best system ever!",
+        "img" : "https://m.timesofindia.com/thumb/msid-84374335/84374335.jpg?resizemode=4&width=400"
+    },
+    {
+        "id" : 2,
+        "name" : "New services available",
+        "date" : "24th Jan, 2021",
+        "info" : "Our neurosurgeons closely collaborate with the world-renowned Dana-Farber Cancer Institute to develop an individual treatment plan for each of our patients.",
+        "img" : "https://aerocare.com.bo/wp-content/uploads/2020/04/ambulancia_neonatal-2.jpg"
+    },
+    {
+        "id" : 3,
+        "name" : "Cancer is now curable",
+        "date" : "18th May, 2021",
+        "info" : "Delta Care Cancer Center has a singular focus on conquering cancer and improving the way that cancer care is delivered throughout the world.",
+        "img" : "https://expertchikitsa.com/wp-content/uploads/2017/02/lekuemia-blood-cancer.jpg"
+    },
+    {
+        "id" : 4,
+        "name" : "Thrombectomy time window",
+        "date" : "28th April, 2021",
+        "info" : "One of the largest cardiovascular centers in the United States, the Heart & Vascular Center—nationally ranked in the specialty of cardiology.",
+        "img" : "https://innovationdistrict.childrensnational.org/wp-content/uploads/2021/04/blood-clot.png"
+    }
+]

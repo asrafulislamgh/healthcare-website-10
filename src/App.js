@@ -12,7 +12,6 @@ import ServiceDetail from "./Pages/Services/ServiceDetail";
 import Services from "./Pages/Services/Services";
 import Footer from "./Pages/Shared/Footer/Footer";
 import HeaderNav from "./Pages/Shared/Header/HeaderNav";
-import Products from "./Pages/Products/Products";
 import Doctors from "./Pages/Doctors/Doctors";
 import Contact from "./Pages/Contact/Contact";
 
@@ -43,9 +42,6 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
-            </Route>
-            <Route path="/products">
-              <Products></Products>
             </Route>
             <Route path="/services">
               <Services></Services>
