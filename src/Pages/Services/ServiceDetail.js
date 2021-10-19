@@ -25,6 +25,8 @@ const ServiceDetail = () => {
             <div>
               <h1>{service?.name}</h1>
               <p>{service?.info}</p>
+              <p>{service?.info}</p>
+              <p>{service?.info}</p>
             </div>
             <Link to="/services">
               <Button variant="light" className="common-btn mt-4">

@@ -1,0 +1,7 @@
+.newsletter {
+  background-image: url(../../img/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-color: #eeeeee;
+  padding: 3rem;
+}
