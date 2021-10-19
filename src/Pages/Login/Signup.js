@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import useFirebase from "../../hooks/useFirebase";
 import "./Signup.css";
 
@@ -22,7 +23,7 @@ const Signup = () => {
     handleRegistration,
     handlePasswordChanging,
     handleUpdateName,
-  } = useFirebase();
+  } = useAuth();
   // const location = useLocation();
   // const history = useHistory();
   // const redirect_url = location.state?.from || "/home";

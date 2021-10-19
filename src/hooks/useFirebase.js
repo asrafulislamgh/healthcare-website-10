@@ -23,10 +23,14 @@ const useFirebase = () => {
   const [name, setName] = useState("");
 
   const auth = getAuth();
+
+  // Google Signin
   const handleGoogleSignin = () => {
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider);
   };
+
+  // Update user
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -48,6 +52,8 @@ const useFirebase = () => {
       })
       .finally(() => {});
   };
+
+  // Registration new User
   const handleRegistration = (e) => {
     e.preventDefault();
     if (password.length < 6) {
@@ -86,7 +92,6 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setError("");
-        console.log(result.user);
       })
       .catch((error) => {
         setError(error.message);
@@ -107,13 +112,15 @@ const useFirebase = () => {
 
   const handleUpdateName = (e) => {
     setName(e.target.value);
-    console.log(name);
+    console.log(e.target.value);
   };
   const handleEmailChanging = (e) => {
     setEmail(e.target.value);
+    console.log(e.target.value);
   };
   const handlePasswordChanging = (e) => {
     setPassword(e.target.value);
+    console.log(e.target.value);
   };
   return {
     user,
