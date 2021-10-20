@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+
 import {
   Col,
   Container,
@@ -15,6 +17,12 @@ const Appointment = () => {
   const { apId } = useParams();
   const [doctors, setDoctors] = useState([]);
   const { user } = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   useEffect(() => {
     fetch("/doctors.json")
@@ -47,9 +55,9 @@ const Appointment = () => {
         <Row className="d-flex justify-content-center text-center">
           <Col style={{ maxWidth: "400px" }}>
             <h3 className="py-3">Appointment</h3>
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <FormControl
-                onBlur=""
+                {...register("name")}
                 className="input-field mb-3"
                 placeholder={user?.displayName}
                 aria-label="name"
@@ -57,17 +65,18 @@ const Appointment = () => {
                 aria-describedby="basic-addon2"
               />
               <FormControl
+                {...register("email")}
                 className="input-field mb-3"
-                onBlur=""
                 placeholder={user?.email}
                 value={user?.email}
                 aria-label="email"
                 aria-describedby="basic-addon2"
               />
               <FormControl
+                {...register("date")}
                 className="input-field mb-3"
                 name="meeting-time"
-                value="2021-06-12T19:30"
+                // value="2021-10-07T00:00"
                 min="2021-10-07T00:00"
                 max="2022-06-14T00:00"
                 aria-label="name"
@@ -83,12 +92,14 @@ const Appointment = () => {
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Control
+                  {...register("detail")}
                   as="textarea"
                   rows={4}
                   className="input-field mb-3"
                   placeholder="Describe your problems"
                 />
               </Form.Group>
+              {errors.exampleRequired && <span>This field is required</span>}
               <div className="d-grid">
                 <Button type="submit" className="btn btn-danger py-3">
                   Make an Appointment
