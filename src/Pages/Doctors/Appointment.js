@@ -29,7 +29,7 @@ const Appointment = () => {
         <div className="container">
           <Row className="d-flex justify-content-center align-items-center">
             <Col xl={4} lg={4} md={5} sm={5} xs={8}>
-              <div className="text-center mb-3">
+              <div className="text-center mb-3 text-white">
                 <img
                   className="doctor-img"
                   src={selectedDoctor?.doctorImg}
@@ -66,10 +66,12 @@ const Appointment = () => {
               />
               <FormControl
                 className="input-field mb-3"
-                onBlur=""
-                placeholder="Your Problem"
+                name="meeting-time"
+                value="2021-06-12T19:30"
+                min="2021-10-07T00:00"
+                max="2022-06-14T00:00"
                 aria-label="name"
-                type="password"
+                type="datetime-local"
                 aria-describedby="basic-addon2"
               />
 
