@@ -5,10 +5,10 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import HeaderTop from "./HeaderTop";
 import userPhoto from "../../../img/user1.png";
-import useFirebase from "../../../hooks/useFirebase";
+import useAuth from "../../../hooks/useAuth";
 
 const HeaderNav = () => {
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
   return (
     <div>
       <HeaderTop></HeaderTop>

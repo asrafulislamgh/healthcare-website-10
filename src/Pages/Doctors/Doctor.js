@@ -1,9 +1,10 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const Doctor = ({ doctor }) => {
-  const { dept, name, doctorImg, rating, country } = doctor;
+  const { id, dept, name, doctorImg, rating, country } = doctor;
   return (
     <div>
       <Card className="text-center">
@@ -25,9 +26,11 @@ const Doctor = ({ doctor }) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Button variant="light" className="common-btn">
-            Make an Appointment
-          </Button>
+          <Link to={`appointment/${id}`}>
+            <Button variant="light" className="common-btn">
+              Make an Appointment
+            </Button>
+          </Link>
         </Card.Footer>
       </Card>
     </div>
