@@ -4,6 +4,7 @@ import logo from "../../../img/logo1.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import HeaderTop from "./HeaderTop";
+import userPhoto from "../../../img/user1.png";
 import useFirebase from "../../../hooks/useFirebase";
 
 const HeaderNav = () => {
@@ -71,19 +72,39 @@ const HeaderNav = () => {
                 Contact
               </Nav.Link>
             </Nav>
-            {user.photoURL && (
-              <Nav.Link>
-                <img
-                  style={{
-                    height: "50px",
-                    width: "50px",
-                    borderRadius: "50%",
-                  }}
-                  src={user.photoURL}
-                  alt="user"
-                />
-              </Nav.Link>
+
+            {!user.email ? (
+              <div></div>
+            ) : (
+              [
+                user.photoURL ? (
+                  <Nav.Link>
+                    <img
+                      style={{
+                        height: "50px",
+                        width: "50px",
+                        borderRadius: "50%",
+                      }}
+                      src={user.photoURL}
+                      alt="user"
+                    />
+                  </Nav.Link>
+                ) : (
+                  <Nav.Link>
+                    <img
+                      style={{
+                        height: "50px",
+                        width: "50px",
+                        borderRadius: "50%",
+                      }}
+                      src={userPhoto}
+                      alt="user"
+                    />
+                  </Nav.Link>
+                ),
+              ]
             )}
+
             <Nav>
               {user.displayName && <Nav.Link>{user.displayName}</Nav.Link>}
 

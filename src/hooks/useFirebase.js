@@ -68,6 +68,7 @@ const useFirebase = () => {
       return setError("Password should be at least in 6 characters");
     }
 
+    // Registration a new Account
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setError("");
@@ -101,6 +102,7 @@ const useFirebase = () => {
         setIsLoading(false);
       });
   };
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -108,7 +110,6 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setError("");
-
         setIsLoading(false);
       })
       .catch((error) => {
@@ -122,9 +123,11 @@ const useFirebase = () => {
   // Update Name
 
   const updateName = () => {
-    updateProfile(auth.currentUser, { displayName: name })
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
       .then((result) => {
-        console.log(result);
+        console.log("the result is ", result);
       })
       .catch((error) => {
         setError(error.message);
@@ -134,6 +137,7 @@ const useFirebase = () => {
   const handleUpdateName = (e) => {
     setName(e.target.value);
     console.log(e.target.value);
+    console.log(name);
   };
   const handleEmailChanging = (e) => {
     setEmail(e.target.value);

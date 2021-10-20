@@ -29,8 +29,9 @@ const Footer = () => {
           <Col md={3}>
             <h4 className="mb-4">Recent Posts</h4>
             <div className="d-flex">
-              <div className="d-flex">
+              <div className="d-flex flex-row flex-md-column flex-lg-row">
                 <img
+                  className="footer-img"
                   style={{ height: "70px", marginRight: "15px" }}
                   src={news1}
                   alt=""
@@ -50,7 +51,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="d-flex my-3">
-              <div className="d-flex">
+              <div className="d-flex flex-row flex-md-column flex-lg-row">
                 <img
                   style={{ height: "70px", marginRight: "15px" }}
                   src={news2}
@@ -71,7 +72,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="d-flex">
-              <div className="d-flex">
+              <div className="d-flex flex-row flex-md-column flex-lg-row">
                 <img
                   style={{ height: "70px", marginRight: "15px" }}
                   src={news3}
