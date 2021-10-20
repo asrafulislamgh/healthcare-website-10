@@ -43,6 +43,12 @@ const Contact = () => {
                 <Form.Label>
                   <h5>+880 1930-336602</h5>
                 </Form.Label>
+                <br />
+                <Form.Label>Address:</Form.Label>
+                <br />
+                <Form.Label>
+                  <h5>Gulshan 1, Gulshan Avenue, Dhaka - 1210, Bangladesh</h5>
+                </Form.Label>
               </Form>
             </Col>
           </Row>
